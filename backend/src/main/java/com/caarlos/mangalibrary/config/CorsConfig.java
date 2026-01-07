@@ -1,12 +1,12 @@
 package com.caarlos.mangalibrary.config;
 
+import java.util.List;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
-import java.util.List;
 
 @Configuration
 public class CorsConfig {
@@ -16,10 +16,8 @@ public class CorsConfig {
         CorsConfiguration config = new CorsConfiguration();
 
         config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of(
-                "https://mangaapp-front.vercel.app",
-                "https://mangaapp-front-ej2cx7xi0-caarlos3s-projects.vercel.app",
-                "https://mangaapp-front-3wz0e3bf4-caarlos3s-projects.vercel.app",
+        config.setAllowedOriginPatterns(List.of(
+                "https://*.vercel.app",
                 "http://localhost:5173",
                 "http://localhost:4173"
         ));
