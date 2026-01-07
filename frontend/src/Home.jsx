@@ -2,7 +2,7 @@ import "./Home.css";
 import { useState } from "react";
 import { useAuth } from "./AuthContext";
 
-const API_BASE_URL = "https://mymangapp-backend-production.up.railway.app";
+const API_BASE_URL = "https://mymangapp-backend-production-d769.up.railway.app";
 
 function Home() {
   const [query, setQuery] = useState("");
