@@ -4,7 +4,7 @@ import { useAuth } from "./AuthContext";
 import "./index.css";
 
 
-const API_BASE_URL = "https://mymangapp-backend-production.up.railway.app";
+const API_BASE_URL = "https://mymangapp-backend-production-d769.up.railway.app";
 
 export default function AuthPage() {
   const [mode, setMode] = useState("login");
