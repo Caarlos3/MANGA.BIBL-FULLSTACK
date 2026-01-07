@@ -1,0 +1,240 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+}
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+#root {
+    padding: 0;
+    margin: 0;
+}
+
+nav {
+    background-color: #000000;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    font-family: "Chokokutai", system-ui;
+}
+
+.links{
+    display: flex;
+    gap: 15px;
+}
+
+.links a{
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.links a:hover{
+    color: #ff0000;
+}
+
+.navbar-toggle{
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    gap: 4px;
+}
+
+.navbar-toggle span{
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/*RESPONSIVE NAVBAR*/
+@media (max-width: 768px) {
+    .navbar{
+        padding: 10px 14px;
+    }
+    
+    .links{
+        position: absolute;
+        top: 54px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        width: 100%;
+        padding: 10px 16px;
+        gap: 10px;
+        background-color: #000000;
+        border-top: 1px solid #333;
+        display: none;
+        z-index: 999;
+    }
+
+    .links a {
+        padding: 10px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .links a:last-child {
+        border-bottom: none;
+    }
+
+    .links.open{
+        display: flex;
+    }
+    
+    .navbar-toggle{
+        display: flex;
+    }
+
+    
+    .navbar-toggle.active span:nth-child(1){
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .navbar-toggle.active span:nth-child(2){
+        opacity: 0;
+    }
+
+    .navbar-toggle.active span:nth-child(3){
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+
+/*Estilos para pagina de autenticacion*/
+
+.auth-container {
+    max-width: 450px;
+  }
+  
+  .auth-title {
+    text-align: center;
+    margin-bottom: 20px;
+    
+  }
+  
+  .auth-mode-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .auth-mode-button {
+    flex: 1;
+    background: #333;
+  }
+  
+  .auth-mode-button.active {
+    background: #e63946;
+  }
+  
+  .auth-input-group {
+    margin-bottom: 15px;
+  }
+  
+  .auth-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
+  }
+  
+  .auth-input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #555;
+    background: #222;
+    color: #fff;
+    font-size: 16px;
+    box-sizing: border-box;
+  }
+  
+  .auth-input:focus {
+    outline: none;
+    border-color: #e63946;
+  }
+  
+  .auth-error {
+    color: tomato;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+  
+  .auth-submit {
+    width: 100%;
+  }
+  
+  .auth-submit.loading {
+    opacity: 0.7;
+    cursor: not-allowed;
+  }
+
+  /* Estilos navbar */
+
+  /* CONTENEDOR DEL ICONO DE USUARIO */
+.navbar-user-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* BOTÓN DEL ICONO */
+.navbar-user-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 20px;
+  padding: 4px;
+}
+
+/* DESPLEGABLE */
+.navbar-user-dropdown {
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background: #1c1c1c;
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 10px;
+  min-width: 160px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+/* EMAIL EN EL DESPLEGABLE */
+.navbar-user-email {
+  margin: 0 0 8px 0;
+  color: #ccc;
+  font-size: 13px;
+  word-break: break-all;
+}
+
+/* BOTÓN LOGOUT */
+.navbar-logout-button {
+  width: 100%;
+  padding: 8px;
+  background: #e63946;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.navbar-logout-button:hover {
+  background: #ff4b5c;
+}

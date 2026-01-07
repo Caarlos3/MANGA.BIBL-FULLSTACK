@@ -1,0 +1,189 @@
+.leidos-container {
+    padding: 20px;
+    min-height: 100vh;
+  }
+  
+  .leidos-container h2 {
+    color: white;
+    font-family: "Play", sans-serif;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+  }
+  
+  
+  
+  .leidos-container .error {
+    color: tomato;
+  }
+  
+  .leidos-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 1400px;
+  }
+  
+  .leido-item {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    border-radius: 12px;
+    padding: 15px;
+    width: 200px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 360px;
+  }
+  
+  .leido-item:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+  }
+  
+  .leido-item .manga-image {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+  
+  .leido-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+    width: 100%;
+  }
+  
+  .leido-info h3 {
+    color: white;
+    font-family: "Chokokutai", system-ui;
+    font-size: 1rem;
+    margin: 8px 0;
+    text-align: center;
+    line-height: 1.3;
+    min-height: 40px;
+  }
+  
+  .leido-info p {
+    color: #aaa;
+    font-size: 0.9rem;
+    margin: 4px 0;
+    text-align: center;
+  }
+  
+  .button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: rgb(20, 20, 20);
+    border: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.164);
+    cursor: pointer;
+    transition-duration: .3s;
+    overflow: hidden;
+    position: relative;
+    margin-top: auto;
+  }
+  
+  .svgIcon {
+    width: 12px;
+    transition-duration: .3s;
+  }
+  
+  .svgIcon path {
+    fill: white;
+  }
+  
+  .button:hover {
+    width: 140px;
+    border-radius: 50px;
+    transition-duration: .3s;
+    background-color: rgb(255, 69, 69);
+    align-items: center;
+  }
+  
+  .button:hover .svgIcon {
+    width: 50px;
+    transition-duration: .3s;
+    transform: translateY(60%);
+  }
+  
+  .button::before {
+    position: absolute;
+    top: -20px;
+    content: "Delete";
+    color: white;
+    transition-duration: .3s;
+    font-size: 2px;
+  }
+  
+  .button:hover::before {
+    font-size: 13px;
+    opacity: 1;
+    transform: translateY(30px);
+    transition-duration: .3s;
+  }
+  
+  @media (max-width: 1200px) {
+    .leidos-list {
+      gap: 18px;
+    }
+    .leido-item {
+      width: 180px;
+    }
+    .leido-item .manga-image {
+      height: 240px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .leidos-list {
+      gap: 15px;
+    }
+    .leido-item {
+      width: 160px;
+    }
+    .leido-item .manga-image {
+      height: 220px;
+    }
+    .leidos-container h2 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .leidos-list {
+      gap: 12px;
+    }
+    .leido-item {
+      width: 140px;
+      min-height: 320px;
+    }
+    .leido-item .manga-image {
+      height: 200px;
+    }
+    .leidos-container h2 {
+      font-size: 1.8rem;
+    }
+    .button {
+      width: 40px;
+      height: 40px;
+    }
+    .button:hover {
+      width: 100px;
+    }
+  }

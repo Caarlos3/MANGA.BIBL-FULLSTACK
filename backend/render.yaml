@@ -1,0 +1,6 @@
+services:
+  - type: web
+    name: mymangapp-backend
+    runtime: java
+    buildCommand: mvn clean install
+    startCommand: java -jar target/*.jar
