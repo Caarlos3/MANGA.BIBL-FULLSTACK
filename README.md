@@ -26,6 +26,7 @@ Sistema Full Stack para la gestión y búsqueda de mangas desarrollado con Java 
 - **HTML5**
 - **CSS3**
 - **JavaScript**
+- **React.js**
 
 ---
 
@@ -35,6 +36,12 @@ Sistema Full Stack para la gestión y búsqueda de mangas desarrollado con Java 
 - Java 17 o superior
 - Maven 3.6+
 
-### Compilación y ejecución
+### Configuración del back
+- cd backend
 - mvn clean install
 - mvn spring-boot:run
+
+### Configuración del front
+- cd frontend
+- npm install
+- npm start
