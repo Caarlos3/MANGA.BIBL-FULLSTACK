@@ -29,11 +29,8 @@ public class JwtAuthFilter extends OncePerRequestFilter {
     }
 
     @Override
-    protected void doFilterInternal(
-            HttpServletRequest request,
-            HttpServletResponse response,
-            FilterChain filterChain
-    ) throws ServletException, IOException {
+    protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) 
+            throws ServletException, IOException {
 
         String authHeader = request.getHeader("Authorization");
 
@@ -43,16 +40,13 @@ public class JwtAuthFilter extends OncePerRequestFilter {
         }
 
         String token = authHeader.substring(7);
-
         if (!jwtService.validate(token)) {
             filterChain.doFilter(request, response);
             return;
         }
 
         String email = jwtService.extractEmail(token);
-
         if (email != null && SecurityContextHolder.getContext().getAuthentication() == null) {
-
             User user = userRepository.findByEmail(email).orElse(null);
 
             if (user != null) {
@@ -62,21 +56,13 @@ public class JwtAuthFilter extends OncePerRequestFilter {
                         .authorities("ROLE_" + user.getRole().name())
                         .build();
 
-                UsernamePasswordAuthenticationToken authToken =
-                        new UsernamePasswordAuthenticationToken(
-                                userDetails,
-                                null,
-                                userDetails.getAuthorities()
-                        );
+                UsernamePasswordAuthenticationToken authToken = new UsernamePasswordAuthenticationToken(
+                                userDetails, null, userDetails.getAuthorities());
 
-                authToken.setDetails(
-                        new WebAuthenticationDetailsSource().buildDetails(request)
-                );
-
+                authToken.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
                 SecurityContextHolder.getContext().setAuthentication(authToken);
             }
         }
-
         filterChain.doFilter(request, response);
     }
 }
