@@ -71,7 +71,7 @@ export default function AuthPage() {
           display: flex;
           justify-content: center;
           align-items: center;
-          background-color: rgba(0, 0, 0, 0.7);
+          background-color: transparent;
           z-index: 9999;
           font-family: 'Play', sans-serif, system-ui;
         }

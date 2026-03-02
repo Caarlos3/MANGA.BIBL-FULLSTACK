@@ -23,6 +23,8 @@ html {
   width: 100%;
   box-sizing: border-box;
   background-color: transparent;
+  position: relative;
+  z-index: 10;
 }
 
 .page-inner {
